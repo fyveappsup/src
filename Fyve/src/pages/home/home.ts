@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { RegisterPage } from '../register/register';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,11 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public nav: NavController) {
 
   }
 
+  viewRegisterPage() {
+    this.nav.push(RegisterPage);
+  }
 }

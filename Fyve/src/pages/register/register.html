@@ -7,5 +7,15 @@
 </ion-header>
 
 <ion-content padding>
-  
+  <ion-input type="text" [(ngModel)]="newItem" placeholder="New Shopping item"></ion-input>
+
+  <button ion-button (click)="addItem()">Add!</button>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of UserItems | async">
+      <ion-item>
+        {{ item.$value }}
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
