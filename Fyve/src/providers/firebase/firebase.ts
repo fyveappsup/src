@@ -12,6 +12,10 @@ export class FirebaseProvider {
   getUserItems() {
     return this.afd.list('/UserItems/');
   }
+
+  getUser(key:string){
+    return this.afd.list('/UserItems/'+key);
+  }
  
   addItem(prenom : string, nom: string, mail: string, description: string, serveur : boolean, mdp: string) {
     var data= {
@@ -22,7 +26,7 @@ export class FirebaseProvider {
       "serveur" : serveur,
       "mdp" : mdp
     };
-    this.afd.list('/UserItems/').push(data);
+    return this.afd.list('/UserItems/').push(data).key;
   }
  
   removeItem(id) {

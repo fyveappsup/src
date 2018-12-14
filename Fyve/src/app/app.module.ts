@@ -30,11 +30,13 @@ import { ServeurProfilPage } from '../pages/serveurprofil/serveurprofil';
 import { HistoriquePage } from '../pages/historique/historique';
 import { PaiementPage } from '../pages/paiement/paiement';
 import { BadgePage } from '../pages/badge/badge';
+import { MenuPage } from '../pages/menu/menu';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage, 
+    MenuPage,
     LoginPage, 
     RegisterPage, 
     ScanPage, 
@@ -56,6 +58,7 @@ import { BadgePage } from '../pages/badge/badge';
   entryComponents: [
     MyApp,
     HomePage, 
+    MenuPage,
     LoginPage,
     RegisterPage, 
     ScanPage, 
