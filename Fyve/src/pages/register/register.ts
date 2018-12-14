@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
-import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'page-register',
@@ -9,13 +8,16 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class RegisterPage {
 
-  UserItems: FirebaseListObservable<any[]>;
-  newItem = '';
+  nom = '';
+  prenom = '';
+  mail = '';
+  description = '';
+  serveur :boolean = false;
+  mdp  = '';
 
   constructor(public navCtrl: NavController, public firebaseProvider: FirebaseProvider) {
-    this.UserItems = this.firebaseProvider.getUserItems();
   }
   addItem() {
-    this.firebaseProvider.addItem(this.newItem);
+    this.firebaseProvider.addItem(this.prenom, this.nom, this.mail, this.description,this.serveur, this.mdp);
   }
-}
+} 

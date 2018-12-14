@@ -7,15 +7,40 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-input type="text" [(ngModel)]="newItem" placeholder="New Shopping item"></ion-input>
-
-  <button ion-button (click)="addItem()">Add!</button>
-
+  
   <ion-list>
-    <ion-item-sliding *ngFor="let item of UserItems | async">
-      <ion-item>
-        {{ item.$value }}
-      </ion-item>
-    </ion-item-sliding>
+
+    <ion-item>
+      <ion-label stacked>Prenom</ion-label>
+      <ion-input type="text" [(ngModel)]="prenom"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="nom"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Mail</ion-label>
+      <ion-input type="mail" [(ngModel)]="mail" placeholder="user@mail.com"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Mot de passe</ion-label>
+      <ion-input type="password" [(ngModel)]="mdp"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Description</ion-label>
+      <ion-input type="text" [(ngModel)]="description" placeholder="Etudiant..."></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Êtes-vous serveur ?</ion-label>
+      <ion-toggle [(ngModel)]="serveur"></ion-toggle>
+    </ion-item>
+
   </ion-list>
+
+  <button ion-button round color="primary" (click)="addItem()">S'inscrire</button>
 </ion-content>
