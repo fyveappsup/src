@@ -4,8 +4,45 @@
 
 <ion-content padding>
 
-  <img src=".jpg" alt="Logo Fyve">
+  <ion-slides pager>
+    <ion-slide>
+      <ion-card>
 
-  <button ion-button block tappable color="primary" round (click)="viewRegisterPage()">Connexion</button>
+        <ion-card-header>
+          Bienvenue dans Fyve !
+        </ion-card-header>
+
+        <ion-card-content>
+          Fyve est l'application qui vous permet de laisser facilement un pourboire à vos serveurs preferés !
+        </ion-card-content>
+
+      </ion-card>
+
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+
+        <ion-card-header>
+          Rien de plus simple !
+        </ion-card-header>
+
+        <ion-card-content>
+          Scan le QR code du serveur !
+          Saisis le montant !
+          Laisse un pourboire !
+        </ion-card-content>
+
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+
+      <img src=".jpg" alt="Logo Fyve">
+
+      <button ion-button block tappable color="primary" round (click)="viewLoginPage()">Connexion</button>
+      <button ion-button block tappable color="primary" round (click)="viewRegisterPage()">S'inscrire</button>
+
+    </ion-slide>
+
+  </ion-slides>
 
 </ion-content>
