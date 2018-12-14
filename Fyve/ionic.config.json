@@ -1,5 +1,7 @@
 {
   "name": "Fyve",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

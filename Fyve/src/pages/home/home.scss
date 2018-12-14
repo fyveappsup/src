@@ -9,10 +9,26 @@ page-home {
     }
 
     button{
-        color:white!important;
+        color:#3F3D3E;
         font-weight: bold;
-        margin-top: 75% !important;
     }
 
+    ion-card{
+        background-color: #3F3D3E!important; 
+        color:#9DE4D1;
+    }
+
+    ion-card-header {
+        font-size: 22px!important;
+        color:#9DE4D1!important;
+    }
+
+    ion-card-content {
+        font-size: 16px!important;
+    }
+
+    .swiper-pagination-bullet-active{
+        background-color: #9DE4D1!important;
+    }
 }
 
