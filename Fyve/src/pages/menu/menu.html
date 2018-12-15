@@ -1,11 +1,31 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      menu
+      Menu
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
- 
+  <ion-list>
+    <button ion-item *ngIf="serveur" (click)="viewQrcodePage()" icon-start>
+      <ion-icon name="ios-card" item-start></ion-icon>
+      Monter ma carte serveur
+    </button>
+
+    <button ion-item (click)="viewMyProfilPage()" icon-start>
+      <ion-icon name="ios-contact" item-start></ion-icon>
+      Mon Compte
+    </button>
+
+    <button ion-item (click)="viewScanPage()" icon-start>
+      <ion-icon name="ios-qr-scanner" item-start></ion-icon>
+      Scanner une carte serveur
+    </button>
+
+    <button ion-item (click)="viewHistoriquePage()" icon-start>
+      <ion-icon name="ios-list" item-start></ion-icon>
+      Historique
+    </button>
+  </ion-list>
 </ion-content>

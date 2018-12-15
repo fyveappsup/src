@@ -1,11 +1,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      QR code
+      Ma carte
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
- 
+<ion-content padding text-center>
+  <h1>{{prenom}} {{nom}}</h1>
+
+    <button ion-button round color="primary" *ngIf="!qrData" (click)="creerQrCode()">Creer le QR Code</button>
+  
+
+  <ion-card *ngIf="qrData">
+      <ngx-qrcode [qrc-value]="qrData"></ngx-qrcode>
+    </ion-card>
+  
 </ion-content>
