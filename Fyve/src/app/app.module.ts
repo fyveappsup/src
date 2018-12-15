@@ -10,6 +10,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { FirebaseProvider } from './../providers/firebase/firebase';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAvPKtXLF5JKBMobqFmtJCpgMgPl_dUoXY",
@@ -33,6 +34,7 @@ import { HistoriquePage } from '../pages/historique/historique';
 import { PaiementPage } from '../pages/paiement/paiement';
 import { BadgePage } from '../pages/badge/badge';
 import { MenuPage } from '../pages/menu/menu';
+import { importType } from '@angular/compiler/src/output/output_ast';
 
 @NgModule({
   declarations: [
@@ -80,7 +82,8 @@ import { MenuPage } from '../pages/menu/menu';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FirebaseProvider
+    FirebaseProvider,
+    BarcodeScanner
   ]
 })
 export class AppModule {}

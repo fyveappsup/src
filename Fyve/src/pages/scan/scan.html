@@ -6,6 +6,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  
+<ion-content padding text-center>
+  <button ion-button round *ngIf="!serveur" (click)="scan()">Je scan maintenant !</button>
+
+  <ion-card *ngIf="serveur">
+      <ion-card-content>
+        Result from Scan: {{ serveur }}
+      </ion-card-content>
+    </ion-card>
 </ion-content>
