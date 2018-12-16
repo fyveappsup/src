@@ -25,7 +25,7 @@ export class FirebaseProvider {
       }
     });
   }
- 
+
   addItem(prenom : string, nom: string, mail: string, description: string, serveur : boolean, mdp: string) {
     var data= {
       "prenom" : prenom,

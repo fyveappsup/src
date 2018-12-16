@@ -30,6 +30,9 @@ export class LoginPage {
       // Récupéractions des infos de l'utilisateur pour les sauvegarder dans la mémoire
       this.user = this.firebaseProvider.getUserByValue("mail", this.mail);
       this.user.forEach(item => {
+        if(item.length==0){
+          this.creerToast("Ce mail n'existe pas dans notre base");
+        }
         item.forEach(element => {
           console.log(element);
           this.user = element;
