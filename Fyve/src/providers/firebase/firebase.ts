@@ -16,6 +16,15 @@ export class FirebaseProvider {
   getUser(key:string){
     return this.afd.list('/UserItems/'+key);
   }
+
+  getUserByValue(cle:string, value:string){
+    return this.afd.list('/UserItems', {
+      query: {
+        orderByChild: cle,
+        equalTo : value
+      }
+    });
+  }
  
   addItem(prenom : string, nom: string, mail: string, description: string, serveur : boolean, mdp: string) {
     var data= {

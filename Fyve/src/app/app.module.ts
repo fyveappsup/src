@@ -34,7 +34,6 @@ import { HistoriquePage } from '../pages/historique/historique';
 import { PaiementPage } from '../pages/paiement/paiement';
 import { BadgePage } from '../pages/badge/badge';
 import { MenuPage } from '../pages/menu/menu';
-import { importType } from '@angular/compiler/src/output/output_ast';
 
 @NgModule({
   declarations: [

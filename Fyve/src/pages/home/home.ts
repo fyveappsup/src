@@ -3,10 +3,6 @@ import { NavController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { LoginPage } from '../login/login';
 
-import { ViewChild } from '@angular/core';
-import { Slides } from 'ionic-angular';
-
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
