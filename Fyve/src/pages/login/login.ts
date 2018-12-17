@@ -40,6 +40,7 @@ export class LoginPage {
             this.verification=true;
             this.creerToast("Login correct !");
             if(this.verification==true){
+              this.storage.set("id", element.$key );
               this.storage.set("description", this.user.description);
               this.storage.set("mail", this.user.mail);
               this.storage.set("nom", this.user.nom);

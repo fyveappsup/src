@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-serveurprofil',
@@ -7,8 +7,11 @@ import { NavController } from 'ionic-angular';
 })
 export class ServeurProfilPage {
 
-  constructor(public navCtrl: NavController) {
-
+  // profil serveur
+  profil = null;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.profil = this.navParams.get('profil');
+ 
   }
 
 }
