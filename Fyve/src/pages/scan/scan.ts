@@ -19,11 +19,8 @@ export class ScanPage {
     this.scanQr.scan().then(barcodeData => {
       this.serveur=barcodeData.text;
       // this.serveur = JSON.parse(this.serveur);
-      var profil;
-      profil = JSON.parse(this.serveur);
-      console.log(profil);
       this.nav.push(ServeurProfilPage, {
-      "profil": profil
+      "profil": this.serveur
     }); 
     }, (err) => {
         this.createAlert("Erreur", "Une erreur s'est produite.", err, "OK");
