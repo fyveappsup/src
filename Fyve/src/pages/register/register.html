@@ -11,32 +11,32 @@
   <ion-list>
 
     <ion-item>
-      <ion-label stacked>Prenom</ion-label>
+      <ion-label stacked color="primary">Prenom</ion-label>
       <ion-input type="text" [(ngModel)]="prenom"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Nom</ion-label>
+      <ion-label stacked color="primary">Nom</ion-label>
       <ion-input type="text" [(ngModel)]="nom"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Mail</ion-label>
+      <ion-label stacked color="primary" >Mail</ion-label>
       <ion-input type="email" [(ngModel)]="mail" placeholder="user@mail.com"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Mot de passe</ion-label>
+      <ion-label stacked color="primary">Mot de passe</ion-label>
       <ion-input type="password" [(ngModel)]="mdp"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Description</ion-label>
-      <ion-input type="text" [(ngModel)]="description" placeholder="Etudiant..."></ion-input>
+      <ion-label stacked color="primary">Description</ion-label>
+      <ion-textarea [(ngModel)]="description" placeholder="Etudiant..."></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Êtes-vous serveur ?</ion-label>
+      <ion-label stacked color="primary">Êtes-vous serveur ?</ion-label>
       <ion-toggle [(ngModel)]="serveur"></ion-toggle>
     </ion-item>
 

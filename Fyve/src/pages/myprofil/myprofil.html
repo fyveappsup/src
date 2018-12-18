@@ -7,5 +7,50 @@
 </ion-header>
 
 <ion-content padding>
- 
+  <ion-list>
+    
+    <ion-list-header class="item item-ios list-header list-header-ios">
+      Vos Informations
+      <button clear icon-only ion-button item-end class="disable-hover item-button button button-ios button-clear button-clear-ios">
+        <ion-icon name="construct" role="img" class="icon icon-ios ion-ios-cog" aria-label="cog"></ion-icon>
+      </button>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label stacked color="primary">Identifiant</ion-label>
+      <ion-input type="text" [(ngModel)]="id" readonly="!isModifiable"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Prenom</ion-label>
+      <ion-input type="text" [(ngModel)]="prenom" readonly="!isModifiable"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="nom" readonly="!isModifiable"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Mail</ion-label>
+      <ion-input type="email" [(ngModel)]="mail" readonly="!isModifiable"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Mot de passe</ion-label>
+      <ion-input type="password" [(ngModel)]="mdp" readonly="!isModifiable"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Description</ion-label>
+      <ion-textarea [(ngModel)]="description" readonly="!isModifiable"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Êtes-vous serveur ?</ion-label>
+      <ion-toggle [(ngModel)]="serveur" readonly="!isModifiable"></ion-toggle>
+    </ion-item>
+
+  </ion-list>
+
 </ion-content>
