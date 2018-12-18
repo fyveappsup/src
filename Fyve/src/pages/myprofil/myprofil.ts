@@ -18,7 +18,7 @@ export class MyProfilPage {
   description = '';
   serveur : boolean;
 
-  isModifiable=false;
+  isModifiable :boolean = false;
 
 
   constructor(public nav: NavController, public storage : Storage, public firebaseProvider: FirebaseProvider ) {
@@ -33,6 +33,31 @@ export class MyProfilPage {
 
   public modifier(){
    this.isModifiable=true;
+  }
+
+  public updateItem(){
+    var value ={
+      "prenom" : this.prenom,
+      "nom" : this.nom,
+      "description" : this.description,
+      "mail" : this.mail,
+      "mdp" : this.mdp,
+      "serveur" : this.serveur
+    };
+    this.firebaseProvider.updateUserItem(this.id, value);
+    this.storage.set("prenom", this.prenom);
+    this.storage.set("nom", this.nom);
+    this.storage.set("description", this.description);
+    this.storage.set("mdp", this.mdp);
+    this.storage.set("mail", this.mail);
+    this.storage.set("serveur", this.serveur);
+
+    this.isModifiable = false;
+
+  }
+
+  public deleteItem(){
+
   }
 
 }

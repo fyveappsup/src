@@ -16,6 +16,9 @@ export class MenuPage {
   serveur: boolean = false;
 
   constructor(public nav: NavController, public storage: Storage) {
+  }
+
+  ionViewWillEnter(){
     this.storage.get('serveur').then((val) => {this.serveur = val;});
   }
 

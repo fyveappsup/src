@@ -1,3 +1,11 @@
 page-myprofil {
-
+    input[readonly]{
+        color: grey;
+    }
+    textarea[readonly]{
+        color: grey;
+    }
+    .background-light{
+        background-color: color($colors,light);
+    }
 }

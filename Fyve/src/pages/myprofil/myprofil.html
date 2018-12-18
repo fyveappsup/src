@@ -6,51 +6,78 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-list>
-    
-    <ion-list-header class="item item-ios list-header list-header-ios">
+
+    <ion-list-header class="item item-ios list-header list-header-ios" color="light">
       Vos Informations
-      <button clear icon-only ion-button item-end class="disable-hover item-button button button-ios button-clear button-clear-ios">
+      <button *ngIf="!isModifiable" (click)="modifier()" clear icon-only ion-button item-end class="disable-hover item-button button button-ios button-clear button-clear-ios">
         <ion-icon name="construct" role="img" class="icon icon-ios ion-ios-cog" aria-label="cog"></ion-icon>
       </button>
     </ion-list-header>
 
     <ion-item>
       <ion-label stacked color="primary">Identifiant</ion-label>
-      <ion-input type="text" [(ngModel)]="id" readonly="!isModifiable"></ion-input>
+      <ion-input type="text" [(ngModel)]="id" readonly=""></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked color="primary">Prenom</ion-label>
-      <ion-input type="text" [(ngModel)]="prenom" readonly="!isModifiable"></ion-input>
+      <ion-input type="text" [(ngModel)]="prenom" [readonly]="!isModifiable"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked color="primary">Nom</ion-label>
-      <ion-input type="text" [(ngModel)]="nom" readonly="!isModifiable"></ion-input>
+      <ion-input type="text" [(ngModel)]="nom" [readonly]="!isModifiable"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked color="primary">Mail</ion-label>
-      <ion-input type="email" [(ngModel)]="mail" readonly="!isModifiable"></ion-input>
+      <ion-input type="email" [(ngModel)]="mail" [readonly]="!isModifiable"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked color="primary">Mot de passe</ion-label>
-      <ion-input type="password" [(ngModel)]="mdp" readonly="!isModifiable"></ion-input>
+      <ion-input type="password" [(ngModel)]="mdp" [readonly]="!isModifiable"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label stacked color="primary">Description</ion-label>
-      <ion-textarea [(ngModel)]="description" readonly="!isModifiable"></ion-textarea>
+      <ion-textarea [(ngModel)]="description" [readonly]="!isModifiable"></ion-textarea>
     </ion-item>
 
     <ion-item>
       <ion-label stacked color="primary">Êtes-vous serveur ?</ion-label>
-      <ion-toggle [(ngModel)]="serveur" readonly="!isModifiable"></ion-toggle>
+      <ion-toggle [(ngModel)]="serveur" [disabled]="!isModifiable"></ion-toggle>
     </ion-item>
 
   </ion-list>
+
+  <button ion-button full color="primary" *ngIf="isModifiable" (click)="updateItem()">Envoyer les modifications</button>
+
+  <ion-list>
+
+      <ion-list-header class="item item-ios list-header list-header-ios" color="light">
+        Opération irresversible
+      </ion-list-header>
+
+      <ion-item-divider class="item item-divider item-ios item-divider-ios item-ios-danger item-divider-ios-danger" color="danger">
+            <ion-label class="label label-ios">
+              Supprimer mon compte*
+            </ion-label>
+          
+          <button (click)="deleteItem()" color="light" ion-button item-end outline class="disable-hover item-button button button-ios button-outline button-outline-ios button-outline-ios-light">
+            Supprimer
+          </button>
+      </ion-item-divider>
+      <ion-card class="background-light">
+          <ion-card-content>
+            * Attention : Cet opération supprimera votre compte de façon définitive !
+          </ion-card-content>
+        </ion-card>
+  </ion-list>
+  
+  
+  
 
 </ion-content>
