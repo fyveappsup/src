@@ -26,7 +26,14 @@ export class QrCodePage {
   }
 
   public creerQrCode(){
-    this.qrData='{"id" : '+ this.id +',"prenom" : '+this.prenom+',"nom" : '+this.nom+',"description" : '+this.description+',"mail" : '+this.mail+'}';
+    this.qrData={
+      "id" : this.id,
+      "prenom" : this.prenom,
+      "nom" : this.nom,
+      "description" : this.description,
+      "mail" : this.mail
+    };
+    this.qrData=JSON.stringify(this.qrData);
   }
 
 }
