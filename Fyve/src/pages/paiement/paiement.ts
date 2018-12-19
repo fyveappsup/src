@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-paiement',
@@ -7,8 +7,10 @@ import { NavController } from 'ionic-angular';
 })
 export class PaiementPage {
 
-  constructor(public navCtrl: NavController) {
+  idServeur = null;
+  constructor(public nav: NavController, public navParams: NavParams) {
 
+    this.idServeur = this.navParams.get('idServeur');
   }
 
 }
