@@ -7,11 +7,14 @@
 </ion-header>
 
 <ion-content padding>
-
     <ion-list>
-        <ion-item *ngFor="let item of listPaiement | async">
-          {{ item.$key }} : {{ item.$value }}
+        <ion-item *ngFor="let item of lesPaiements">
+          <h2>Donneur : {{ item.idDonneur}}</h2>
+          <h3>Receveur : {{ item.idReceveur}}</h3>
+          <p>Montant : {{ item.montant}}€</p>
         </ion-item>
-    </ion-list>
- 
+      </ion-list>
+
+
+   
 </ion-content>

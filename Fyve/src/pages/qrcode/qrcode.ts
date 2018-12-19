@@ -9,11 +9,11 @@ import { Storage } from '@ionic/storage';
 export class QrCodePage {
 
   qrData=null;
-  id="";
-  prenom="";
-  nom="";
-  description="";
-  mail="";
+  id=null;
+  prenom=null;
+  nom=null;
+  description=null;
+  mail=null;
 
 
   constructor(public navCtrl: NavController, public storage: Storage) {
@@ -26,15 +26,19 @@ export class QrCodePage {
     this.storage.get("nom").then((val) => {this.nom= val;});
     this.storage.get("description").then((val) => {this.description=val;});
     this.storage.get("mail").then((val) => {this.mail=val;});
-    
-    this.qrData={
-      "id" : this.id,
-      "prenom" : this.prenom,
-      "nom" : this.nom,
-      "description" : this.description,
-      "mail" : this.mail
-    };
-    this.qrData=JSON.stringify(this.qrData);
+  }
+
+  ionViewDidEnter(){
+    if(this.id && this.description && this.mail && this.nom && this.prenom){
+      this.qrData={
+        "id" : this.id,
+        "prenom" : this.prenom,
+        "nom" : this.nom,
+        "description" : this.description,
+        "mail" : this.mail
+      };
+      this.qrData=JSON.stringify(this.qrData);
+    }
   }
 
 }

@@ -67,12 +67,7 @@ export class FirebaseProvider {
   }
 
   getPaiementById(value:string){
-    return this.afd.list('/PaiementItems', {
-      query: {
-        orderByChild: "date",
-        equalTo : value
-      }
-    });
+    return this.afd.list('/PaiementItems');
   }
 
 
