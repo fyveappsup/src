@@ -18,7 +18,6 @@ export class ScanPage {
   public scan() {
     this.scanQr.scan().then(barcodeData => {
       this.serveur=barcodeData.text;
-      // this.serveur = JSON.parse(this.serveur);
       this.nav.push(ServeurProfilPage, {
       "profil": this.serveur
     }); 

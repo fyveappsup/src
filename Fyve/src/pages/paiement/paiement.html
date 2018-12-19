@@ -8,4 +8,11 @@
 
 <ion-content padding>
  idServeur : {{idServeur}}
+ {{paiementEffectue}}
+
+ <ion-item>
+  <ion-range [(ngModel)]="montant" color="primary"  min="1" max="100" step="1"></ion-range>
+</ion-item>
+  pourboire : <ion-label>{{montant/10}} €</ion-label>
+ <button ion-button round (click)="payer()">Fyve me</button>
 </ion-content>
