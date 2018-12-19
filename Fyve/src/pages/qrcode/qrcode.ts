@@ -17,15 +17,16 @@ export class QrCodePage {
 
 
   constructor(public navCtrl: NavController, public storage: Storage) {
+   
+  }
+
+  ionViewWillEnter(){
     this.storage.get("id").then((val) => {this.id=val;});
     this.storage.get("prenom").then((val) => {this.prenom=val;});
     this.storage.get("nom").then((val) => {this.nom= val;});
     this.storage.get("description").then((val) => {this.description=val;});
     this.storage.get("mail").then((val) => {this.mail=val;});
-   
-  }
-
-  ionViewWillEnter(){
+    
     this.qrData={
       "id" : this.id,
       "prenom" : this.prenom,

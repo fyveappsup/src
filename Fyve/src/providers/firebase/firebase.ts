@@ -66,6 +66,15 @@ export class FirebaseProvider {
     return this.afd.list('/PaiementItems/').push(data).key;
   }
 
+  getPaiementById(value:string){
+    return this.afd.list('/PaiementItems', {
+      query: {
+        orderByChild: "date",
+        equalTo : value
+      }
+    });
+  }
+
 
   // **********************************************************************************
   // Création d'un toast
