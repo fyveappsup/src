@@ -11,6 +11,7 @@ export class FirebaseProvider {
     console.log('Constructeur firebase provider');
   }
 
+  // UserItem **********************************************
   getUserItems() {
     return this.afd.list('/UserItems/');
   }
@@ -52,7 +53,21 @@ export class FirebaseProvider {
     .catch(err => this.creerAlert("Une erreur est survenue", err.toString(), "OK"));
   }
 
+  // **********************************************************************************
 
+  // PaiementItem
+  addPaiementItem(idDonneur : string, idReceveur: string, montant : number) {
+    var data= {
+      "idDonneur" : idDonneur,
+      "idReceveur" : idReceveur,
+      "montant" : montant,
+      "date" : Date.now()
+    };
+    return this.afd.list('/PaiementItems/').push(data).key;
+  }
+
+
+  // **********************************************************************************
   // Création d'un toast
   public creerToast(message: string) {
     var toast = this.toastCtrl.create({
