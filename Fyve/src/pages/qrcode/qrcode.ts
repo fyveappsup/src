@@ -25,7 +25,7 @@ export class QrCodePage {
    
   }
 
-  public creerQrCode(){
+  ionViewWillEnter(){
     this.qrData={
       "id" : this.id,
       "prenom" : this.prenom,

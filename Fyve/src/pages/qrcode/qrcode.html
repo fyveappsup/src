@@ -8,13 +8,10 @@
 
 <ion-content padding text-center>
   <ion-icon name="ios-contact"></ion-icon>
-  <h1>{{prenom}} {{nom}}</h1>
-
-    <button ion-button round color="primary" *ngIf="!qrData" (click)="creerQrCode()">Creer le QR Code</button>
-  
+  <h1>{{prenom}} {{nom}}</h1>  
 
   <ion-card *ngIf="qrData">
-      <ngx-qrcode [qrc-value]="qrData"></ngx-qrcode>
-    </ion-card>
+    <ngx-qrcode [qrc-value]="qrData"></ngx-qrcode>
+  </ion-card>
   
 </ion-content>
