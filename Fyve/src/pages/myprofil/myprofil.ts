@@ -1,7 +1,10 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { Storage } from '@ionic/storage';
+import { AlertController } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-myprofil',
@@ -21,7 +24,7 @@ export class MyProfilPage {
   isModifiable :boolean = false;
 
 
-  constructor(public nav: NavController, public storage : Storage, public firebaseProvider: FirebaseProvider ) {
+  constructor(public nav: NavController, public storage : Storage, public firebaseProvider: FirebaseProvider, public alertCtrl: AlertController ) {
     this.storage.get("id").then((val) => {this.id=val;});
     this.storage.get("prenom").then((val) => {this.prenom=val;});
     this.storage.get("nom").then((val) => {this.nom= val;});
@@ -57,7 +60,24 @@ export class MyProfilPage {
   }
 
   public deleteItem(){
-
+    const alert = this.alertCtrl.create({
+      title: "Voulez-vous supprimer votre compte ?",
+      subTitle: "Cette opération est irreverssible !",
+      buttons: [{
+        text: 'Je confirme',
+        handler: () => {
+          this.firebaseProvider.removeUserItem(this.id);
+          this.storage.clear();
+          this.nav.setRoot(HomePage);
+        }
+      },
+      {
+        text: 'Annuler',
+        handler: () => {
+        }
+      }]
+    });
+    alert.present();
   }
 
 }

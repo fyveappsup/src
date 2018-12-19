@@ -49,7 +49,7 @@ export class RegisterPage {
           });
         });
         this.storage.set("id", this.cle);
-        this.nav.push(MenuPage);
+        this.nav.setRoot(MenuPage);
       }
       // Si ca a échoué
       else {

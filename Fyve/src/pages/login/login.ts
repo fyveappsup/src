@@ -46,7 +46,7 @@ export class LoginPage {
               this.storage.set("nom", this.user.nom);
               this.storage.set("prenom", this.user.prenom);
               this.storage.set("serveur", this.user.serveur);
-              this.nav.push(MenuPage);
+              this.nav.setRoot(MenuPage);
             }
             else{
               this.creerToast("Login incorrect !")

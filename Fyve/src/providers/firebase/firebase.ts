@@ -46,8 +46,10 @@ export class FirebaseProvider {
       .catch(err => this.creerAlert("Une erreur est survenue", err.toString(), "OK"));
   }
  
-  removeItem(id) {
-    this.afd.list('/UserItems/').remove(id);
+  removeUserItem(id) {
+    this.afd.list('/UserItems/').remove(id)
+    .then(_ => this.creerToast("Votre compte a bien été supprimé."))
+    .catch(err => this.creerAlert("Une erreur est survenue", err.toString(), "OK"));
   }
 
 
