@@ -29,6 +29,10 @@ export class FirebaseProvider {
     });
   }
 
+  getUserById(id:string){
+    return this.afd.object('/UserItems/'+id);
+  }
+
   addItem(prenom : string, nom: string, mail: string, description: string, serveur : boolean, mdp: string) {
     var data= {
       "prenom" : prenom,
@@ -66,8 +70,22 @@ export class FirebaseProvider {
     return this.afd.list('/PaiementItems/').push(data).key;
   }
 
-  getPaiementById(value:string){
-    return this.afd.list('/PaiementItems');
+  getPaiementDonnesById(value:string){
+    return this.afd.list('/PaiementItems', {
+      query: {
+        orderByChild: "idDonneur",
+        equalTo : value
+      }
+    });
+  }
+
+  getPaiementRecusById(value:string){
+    return this.afd.list('/PaiementItems', {
+      query: {
+        orderByChild: "idReceveur",
+        equalTo : value
+      }
+    });
   }
 
 

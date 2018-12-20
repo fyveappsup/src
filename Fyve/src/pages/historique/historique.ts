@@ -9,8 +9,15 @@ import { Storage } from '@ionic/storage';
 })
 export class HistoriquePage {
 
-  listPaiement = null;
-  lesPaiements = [];
+  section = "recus";
+
+  listPaiementDonnes = null;
+  lesPaiementsDonnes = [];
+  totalDonnes = 0;
+
+  listPaiementRecus = null;
+  lesPaiementsRecus = [];
+  totalRecus = 0;
 
   idUser = null;
 
@@ -21,13 +28,46 @@ export class HistoriquePage {
     this.storage.get("id").then((val) => {
       this.idUser=val;
       console.log("idUser", this.idUser);
-      this.listPaiement = this.firebaseProvider.getPaiementById(this.idUser);
-      console.log(this.listPaiement);
-      this.listPaiement.forEach(element => {
-        console.log(element);
-        this.lesPaiements=this.lesPaiements.concat(element);
+
+      // paiemments recus
+      this.listPaiementRecus = this.firebaseProvider.getPaiementRecusById(this.idUser);
+      this.listPaiementRecus.forEach(element => {
+        this.lesPaiementsRecus=this.lesPaiementsRecus.concat(element);
+        this.getTotalRecus();
       });
-      console.log(this.lesPaiements);
+      console.log("paiement recus",this.lesPaiementsRecus);
+
+      // paiemments données
+      this.listPaiementDonnes = this.firebaseProvider.getPaiementDonnesById(this.idUser);
+      this.listPaiementDonnes.forEach(element => {
+        this.lesPaiementsDonnes=this.lesPaiementsDonnes.concat(element);
+        this.getTotalDonnes();
+      });
+      console.log("paiement donnes",this.lesPaiementsDonnes);
+
+      
+    });
+  }
+
+  public getNomUser(id:string) : string{
+    var nom ="";
+    this.firebaseProvider.getUserById(id).forEach(user =>{
+      nom = user.prenom + " "+ user.nom;
+    });
+    return nom;
+  }
+
+  public getTotalRecus(){
+    this.lesPaiementsRecus.forEach(item =>{
+      console.log("item", item);
+      this.totalRecus+=item.montant;
+    });
+  }
+
+  public getTotalDonnes(){
+    this.lesPaiementsDonnes.forEach(item =>{
+      console.log("item", item);
+      this.totalDonnes+=item.montant;
     });
   }
 
