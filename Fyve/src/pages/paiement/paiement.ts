@@ -22,7 +22,7 @@ export class PaiementPage {
   }
 
   public payer(){
-    this.paiementEffectue = this.firebaseProvider.addPaiementItem(this.idDonneur, this.idServeur, this.montant/100);
+    this.paiementEffectue = this.firebaseProvider.addPaiementItem(this.idDonneur, this.idServeur, this.montant/10);
     if(this.paiementEffectue!=null){
       this.creerToast("Le serveur vous remercie !");
     }

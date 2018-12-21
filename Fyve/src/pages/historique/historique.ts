@@ -32,7 +32,8 @@ export class HistoriquePage {
       // paiemments recus
       this.listPaiementRecus = this.firebaseProvider.getPaiementRecusById(this.idUser);
       this.listPaiementRecus.forEach(element => {
-        this.lesPaiementsRecus=this.lesPaiementsRecus.concat(element);
+        this.lesPaiementsRecus=[];
+        this.lesPaiementsRecus=element;
         this.getTotalRecus();
       });
       console.log("paiement recus",this.lesPaiementsRecus);
@@ -40,7 +41,8 @@ export class HistoriquePage {
       // paiemments données
       this.listPaiementDonnes = this.firebaseProvider.getPaiementDonnesById(this.idUser);
       this.listPaiementDonnes.forEach(element => {
-        this.lesPaiementsDonnes=this.lesPaiementsDonnes.concat(element);
+        this.lesPaiementsDonnes=[];
+        this.lesPaiementsDonnes=element;
         this.getTotalDonnes();
       });
       console.log("paiement donnes",this.lesPaiementsDonnes);
@@ -58,6 +60,7 @@ export class HistoriquePage {
   }
 
   public getTotalRecus(){
+    this.totalRecus=0;
     this.lesPaiementsRecus.forEach(item =>{
       console.log("item", item);
       this.totalRecus+=item.montant;
@@ -65,6 +68,7 @@ export class HistoriquePage {
   }
 
   public getTotalDonnes(){
+    this.totalDonnes=0;
     this.lesPaiementsDonnes.forEach(item =>{
       console.log("item", item);
       this.totalDonnes+=item.montant;
