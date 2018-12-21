@@ -12,6 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { FirebaseProvider } from './../providers/firebase/firebase';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 
 
@@ -85,7 +86,8 @@ import { MenuPage } from '../pages/menu/menu';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FirebaseProvider,
-    BarcodeScanner
+    BarcodeScanner,
+    NativeAudio
   ]
 })
 export class AppModule {}
