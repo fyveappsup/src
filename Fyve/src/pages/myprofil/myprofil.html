@@ -58,11 +58,21 @@
   <ion-list>
 
       <ion-list-header class="item item-ios list-header list-header-ios" color="light">
-        Opération irresversible
+        Autres Opérations
       </ion-list-header>
 
-      <ion-item-divider class="item item-divider item-ios item-divider-ios item-ios-danger item-divider-ios-danger" color="danger">
-            <ion-label class="label label-ios">
+      <ion-item-divider color="primary">
+        <ion-label color="light">
+          Se deconnectez 
+        </ion-label>
+      
+      <button (click)="deconnection()" color="light" ion-button item-end outline>
+        <ion-icon name="ios-exit-outline"></ion-icon>
+      </button>
+  </ion-item-divider>
+
+      <ion-item-divider color="danger">
+            <ion-label>
               Supprimer mon compte*
             </ion-label>
           

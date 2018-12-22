@@ -43,6 +43,7 @@ export class LoginPage {
               this.storage.set("id", element.$key );
               this.storage.set("description", this.user.description);
               this.storage.set("mail", this.user.mail);
+              this.storage.set("mdp", this.user.mdp);
               this.storage.set("nom", this.user.nom);
               this.storage.set("prenom", this.user.prenom);
               this.storage.set("serveur", this.user.serveur);

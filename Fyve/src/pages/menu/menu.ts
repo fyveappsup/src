@@ -6,6 +6,7 @@ import { QrCodePage } from '../qrcode/qrcode';
 import { MyProfilPage} from '../myprofil/myprofil';
 import { ScanPage } from '../scan/scan';
 import { HistoriquePage} from '../historique/historique';
+import { HomePage } from './../home/home';
 
 @Component({
   selector: 'page-menu',
@@ -36,5 +37,10 @@ export class MenuPage {
 
   public viewHistoriquePage(){
     this.nav.push(HistoriquePage);
+  }
+
+  public deconnection(){
+    this.storage.clear();
+    this.nav.setRoot(HomePage);
   }
 }

@@ -1,31 +1,83 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Menu
+      <img src="../../assets/imgs/logovert.png" alt="FYVE">
     </ion-title>
+    <ion-buttons end>
+      <button color="primary" ion-button icon-only clear (click)="deconnection()">
+        <ion-icon name="ios-exit-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <button ion-item *ngIf="serveur" (click)="viewQrcodePage()" icon-start>
-      <ion-icon name="ios-card" item-start></ion-icon>
-      Monter ma carte serveur
-    </button>
 
-    <button ion-item (click)="viewMyProfilPage()" icon-start>
-      <ion-icon name="ios-contact" item-start></ion-icon>
-      Mon Compte
-    </button>
+  <ion-row align-items-center *ngIf="serveur" (click)="viewQrcodePage()">
+    <ion-col col-3 class="col-img">
+      <img src="../../assets/imgs/id-card-2.png" />
+    </ion-col>
 
-    <button ion-item (click)="viewScanPage()" icon-start>
-      <ion-icon name="ios-qr-scanner" item-start></ion-icon>
-      Scanner une carte serveur
-    </button>
+    <ion-col col-7 padding class="col-menu-content">
+      <h3>Carte Serveur</h3>
+      <p>Mon QrCode afin que mes clients puissent me Fyver !</p>
+    </ion-col>
 
-    <button ion-item (click)="viewHistoriquePage()" icon-start>
-      <ion-icon name="ios-list" item-start></ion-icon>
-      Historique
-    </button>
-  </ion-list>
+    <ion-col col-2 class="col-ico" text-center>
+      <ion-icon name="ios-arrow-dropright"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row align-items-center (click)="viewScanPage()">
+    <ion-col col-3 class="col-img">
+      <img src="../../assets/imgs/qr-code.png" />
+    </ion-col>
+
+    <ion-col col-7 padding class="col-menu-content">
+      <h3>Scanner une carte serveur</h3>
+      <p>Accèder au profil d'un serveur en scannant sa carte</p>
+    </ion-col>
+
+    <ion-col col-2 class="col-ico" text-center>
+      <ion-icon name="ios-arrow-dropright"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+
+
+
+  <ion-row align-items-center (click)="viewHistoriquePage()">
+    <ion-col col-3 class="col-img">
+      <img src="../../assets/imgs/checked.png" />
+    </ion-col>
+
+    <ion-col col-7 padding class="col-menu-content">
+      <h3>Vos Fyves</h3>
+      <p>L'historique de tous les Fyves reçus et donnés</p>
+    </ion-col>
+
+    <ion-col col-2 class="col-ico" text-center>
+      <ion-icon name="ios-arrow-dropright"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+
+
+  <ion-row align-items-center (click)="viewMyProfilPage()">
+    <ion-col col-3 class="col-img">
+      <img src="../../assets/imgs/user-2.png" />
+    </ion-col>
+
+    <ion-col col-7 padding class="col-menu-content">
+      <h3>Mon compte</h3>
+      <p>Toutes les informations de votre profil</p>
+    </ion-col>
+
+    <ion-col col-2 class="col-ico" text-center>
+      <ion-icon name="ios-arrow-dropright"></ion-icon>
+    </ion-col>
+  </ion-row>
+
 </ion-content>

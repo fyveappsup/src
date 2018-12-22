@@ -80,4 +80,9 @@ export class MyProfilPage {
     alert.present();
   }
 
+  public deconnection(){
+    this.storage.clear();
+    this.nav.setRoot(HomePage);
+  }
+
 }
