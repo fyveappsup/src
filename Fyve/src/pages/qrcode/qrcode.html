@@ -7,11 +7,23 @@
 </ion-header>
 
 <ion-content padding text-center>
-  <ion-icon name="ios-contact"></ion-icon>
-  <h1>{{prenom}} {{nom}}</h1>  
-
+  
   <ion-card *ngIf="qrData">
-    <ngx-qrcode [qrc-value]="qrData"></ngx-qrcode>
+    <ion-card-title>
+        {{prenom}} {{nom}}
+    </ion-card-title>
+
+    <ion-card-content padding>
+      <ngx-qrcode [qrc-value]="qrData"></ngx-qrcode>
+      <p>
+        Presentez votre carte à vos clients pour qu'il puissent vous donner des Fyves !
+      </p>
+    </ion-card-content>
+    
   </ion-card>
+
+  <div margin padding class="logo-fyve">
+    <img src="../../assets/imgs/logoblanc.png" alt="" />
+  </div>
   
 </ion-content>

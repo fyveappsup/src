@@ -1,15 +1,67 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Profil de {{profil.nom}} {{profil.prenom}}
+      Serveur
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  {{profil.nom}} {{profil.prenom}}
-  {{profil.description}}
+<ion-content>
+  <div class="vert"></div>
 
-  <button ion-button round (click)="paiement()">Fyve me</button>
-  
+  <div class="logo-profil">
+    <img src="../../assets/imgs/userBarman.png" />
+  </div>
+
+  <div class="container">
+    <ion-badge>4★ (7 avis)</ion-badge>
+    <h2>
+      {{profil.prenom}} {{profil.nom}}
+    </h2>
+    <p class="description">
+      {{profil.description}}
+    </p>
+
+
+    <div padding>
+      <button ion-button block round color="primary-vive" (click)="paiement()">Fyve me !</button>
+    </div>
+
+    <ion-list>
+      <ion-item-divider text-left color="secondary">
+        <ion-label>
+          Les avis
+        </ion-label>
+
+        <button ion-button item-end outline>
+          Ajouter un avis
+        </button>
+      </ion-item-divider>
+    </ion-list>
+
+    <div class="list-comment">
+      <ion-card>
+        <ion-card-title padding>
+          Albert Dupont
+          <ion-badge>4★</ion-badge>
+        </ion-card-title>
+
+        <ion-card-content>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus magna ac magna interdum accumsan.
+          Suspendisse volutpat bibendum vehicula. Etiam consectetur non velit sed gravida. Phasellus dolor erat,
+          tincidunt at viverra non, tincidunt in sapien. Nam eu sapien sed risus euismod dapibus non quis ante.
+          Nulla in velit vitae justo elementum lacinia et sed mi. Phasellus elementum imperdiet mauris,
+          et pellentesque tellus scelerisque nec.
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+
+
+
+
+  </div>
+
+
+
 </ion-content>

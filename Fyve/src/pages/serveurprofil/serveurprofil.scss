@@ -1,3 +1,112 @@
 page-serveurprofil {
 
+  .toolbar-title,
+  .toolbar>.back-button {
+    color: white !important;
+    text-align: center;
+    font-family: 'Righteous';
+
+    img {
+      width: 49px;
+      height: 27px;
+    }
+  }
+
+  ion-header::after {
+    display: none;
+  }
+
+  .back-button-md {
+    position: absolute;
+    z-index: 99;
+  }
+
+  .toolbar-background {
+    background: transparent;
+    border: 0px !important;
+  }
+
+  .vert {
+    z-index: -99;
+    position: absolute;
+    height: 120px;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    background: rgba(157, 228, 209, 1);
+    background: -moz-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(157, 228, 209, 1)), color-stop(69%, rgba(10, 226, 168, 1)), color-stop(100%, rgba(10, 226, 168, 1)));
+    background: -webkit-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9de4d1', endColorstr='#0ae2a8', GradientType=1);
+  }
+
+  .scroll-content {
+    margin-top: 0 !important;
+  }
+
+  .logo-profil {
+    margin-top: 65px;
+    text-align: center;
+
+    img {
+      margin: auto;
+
+    }
+  }
+
+  .container {
+    text-align: center;
+
+    ion-badge {
+      color: white;
+    }
+
+    h2 {
+      color: color($colors, primary);
+    }
+
+    .description {}
+
+    ion-list {
+      margin-top: 20px;
+      margin-bottom: 0;
+
+      button {
+        color: white;
+        border-color: white;
+      }
+
+    }
+
+    .list-comment {
+        background-color: color($colors, light);
+        padding :12px;
+
+      ion-card {
+          margin : 0;
+          margin-right: 0!important;
+
+        ion-card-title {
+          text-align: left;
+          font-size: 16px;
+
+          ion-badge {
+            float: right;
+          }
+        }
+
+        ion-card-content {
+          text-align: justify;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+
+  }
+
 }

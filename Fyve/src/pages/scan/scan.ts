@@ -1,4 +1,4 @@
-import { Component, animate } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { AlertController } from 'ionic-angular';
@@ -25,6 +25,20 @@ export class ScanPage {
         this.createAlert("Erreur", "Une erreur s'est produite.", err, "OK");
         console.log('Error: ', err);
     });
+  }
+
+  public allerProfilServeur(){
+    var qrData={
+      "id" : "-LUKySJjGB9nKZIV2qsS",
+      "prenom" : "Francois",
+      "nom" : "Le Francais",
+      "description" : "Supporter de l'equipe de France",
+      "mail" : "francois@france.fr"
+    };
+    var serv=JSON.stringify(qrData);
+    this.nav.push(ServeurProfilPage, {
+      "profil": serv
+    }); 
   }
 
 
