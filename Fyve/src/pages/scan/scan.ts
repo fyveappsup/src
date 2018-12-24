@@ -10,7 +10,7 @@ import { ServeurProfilPage } from '../serveurprofil/serveurprofil';
 })
 export class ScanPage {
 
-  serveur:any =null;
+  serveur:any = null;
   constructor(public nav: NavController, public alertCtrl: AlertController, public scanQr: BarcodeScanner) {
     
   }

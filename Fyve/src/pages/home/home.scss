@@ -1,34 +1,101 @@
 page-home {
     
     ion-content{
+        background: rgba(157, 228, 209, 1);
+        background: -moz-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+        background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(157, 228, 209, 1)), color-stop(69%, rgba(10, 226, 168, 1)), color-stop(100%, rgba(10, 226, 168, 1)));
+        background: -webkit-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+        background: -o-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+        background: -ms-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+        background: linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9de4d1', endColorstr='#0ae2a8', GradientType=1);
 
-    background-image: url(../../assets/imgs/bar-1846137_1920.jpg);
-    background-size: cover;
-    background-position: 35%;
+        text-align: center;
     
     }
 
-    button{
-        color:#3F3D3E;
-        font-weight: bold;
+    .img-logo{
+        width: 70%;
+        height: auto;
+        margin-top : 50px;
     }
 
-    ion-card{
-        background-color: #3F3D3E!important; 
-        color:#9DE4D1;
+    .subtitle{
+        color: white;
+        font-family: "Righteous";
     }
 
-    ion-card-header {
-        font-size: 22px!important;
-        color:#9DE4D1!important;
-    }
-
-    ion-card-content {
-        font-size: 16px!important;
+    #arrow-left{
+        margin-top:50px;
+        animation-name: mouvement-fleche;
+        animation-duration: 4s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
     }
 
     .swiper-pagination-bullet-active{
-        background-color: #9DE4D1!important;
+        background-color: white;
     }
+
+    @keyframes mouvement-fleche {
+        0%   {margin-left: 0%}
+        70%  {margin-left: 65%}
+        100% {margin-left: 0%}
+      }
+
+      ion-card{
+        -webkit-box-shadow: 0px 0px 61px -20px rgba(0,0,0,0.75)!important;
+        -moz-box-shadow: 0px 0px 61px -20px rgba(0,0,0,0.75)!important;
+        box-shadow: 0px 0px 61px -20px rgba(0,0,0,0.75)!important;
+
+        border-radius: 10px!important;
+      }
+
+      ion-card-content{
+          position: relative;
+
+          p{
+              font-size: 12px!important;
+          }
+      }
+
+      .espace-img{
+          height: 200px;
+      }
+
+
+    #img-compte1{
+        width : 30%;
+        height: auto;
+        position : absolute;
+        top:0;
+        left:5%;
+        animation-name: mouvement-img-compte1;
+        animation-duration: 10s;
+        animation-delay: 5s;
+        animation-iteration-count: infinite;
+    }
+    #img-compte2{
+        width : 30%;
+        height: auto;
+        position : absolute;
+        top:40%;
+        right:5%;
+        animation-name: mouvement-img-compte2;
+        animation-duration: 10s;
+        animation-delay: 5s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes mouvement-img-compte1 {
+        0%   {top:0; left:5%}
+        80% {top:15%; left:30%}
+        100%   {top:0; left:5%}
+      }
+      @keyframes mouvement-img-compte2 {
+        0%   {top:40%; right:5%}
+        80% {top:20%; right:30%}
+        100%   {top:40%; right:5%}
+      }
 }
 

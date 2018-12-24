@@ -1,54 +1,65 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Historique des paiements
+      Mes Fyves
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding text-center>
-  <div [ngSwitch]="section">
+  <div class="vert"></div>
 
-    <div *ngSwitchCase="'recus'">
-      <h2>Total</h2>
-      <h1>{{totalRecus.toFixed(2)}}€</h1>
+  <div class="container">
 
-      <ion-list>
+    <div [ngSwitch]="section">
+
+      <div *ngSwitchCase="'recus'">
+        <h1>{{totalRecus.toFixed(2)}}€</h1>
+        <h3>Mes Fyves reçus</h3>
+
+        <ion-list>
           <ion-list-header>
-              Mes pourboires reçus
-            </ion-list-header>
-        <ion-item *ngIf="!lesPaiementsRecus">Vous n'avez pas encore reçus de pourboire</ion-item>
-        <ion-item *ngFor="let item of lesPaiementsRecus">
-          <span item-start style="width:50%;">par <b>{{ getNomUser(item.idDonneur)}}</b></span>
-          <span>{{item.date | date:'d MMM'}}</span>
-          <ion-badge item-end>{{item.montant.toFixed(2)}}€</ion-badge>
-        </ion-item>
-      </ion-list>
+            <span item-start>Date</span>
+            <span style="width:50%;">Le donneur</span>
+            <span item-end>Montant</span>
+          </ion-list-header>
+          <ion-item *ngIf="lesPaiementsRecus==0">Vous n'avez pas encore reçus de pourboire</ion-item>
+          <ion-item *ngFor="let item of lesPaiementsRecus">
+            <span item-start class="date">{{item.date | date:'d MMM'}}</span>
+            <span style="width:50%;">par <b>{{ getNomUser(item.idDonneur)}}</b></span>
+            <ion-badge item-end>{{item.montant.toFixed(2)}}€</ion-badge>
+          </ion-item>
+        </ion-list>
 
-    </div>
+      </div>
 
 
 
-    <div *ngSwitchCase="'donnes'">
-      <h2>Total</h2>
-      <h1>{{totalDonnes.toFixed(2)}}€</h1>
+      <div *ngSwitchCase="'donnes'">
+        <h1>{{totalDonnes.toFixed(2)}}€</h1>
+        <h3>Mes Fyves donnés</h3>
 
-      <ion-list>
+        <ion-list>
           <ion-list-header>
-              Mes pourboires donnés
-            </ion-list-header>
-        <ion-item *ngIf="!lesPaiementsDonnes">Vous n'avez pas encore reçus de pourboire</ion-item>
-        <ion-item *ngFor="let item of lesPaiementsDonnes">
-          <span item-start style="width:50%;">à <b>{{ getNomUser(item.idReceveur)}}</b></span>
-          <span>{{item.date | date:'d MMM'}}</span>
-          <ion-badge item-end>{{item.montant.toFixed(2)}}€</ion-badge>
-        </ion-item>
-      </ion-list>
+            <span item-start>Date</span>
+            <span style="width:50%;">Le donneur</span>
+            <span item-end>Montant</span>
+          </ion-list-header>
+          <ion-item *ngIf="lesPaiementsDonnes==0">Vous n'avez pas encore donnés de pourboire</ion-item>
+          <ion-item *ngFor="let item of lesPaiementsDonnes">
+            <span item-start class="date">{{item.date | date:'d MMM'}}</span>
+            <span style="width:50%;">à <b>{{ getNomUser(item.idDonneur)}}</b></span>
+            <ion-badge item-end>{{item.montant.toFixed(2)}}€</ion-badge>
+          </ion-item>
+        </ion-list>
+
+      </div>
 
     </div>
 
   </div>
 
+  
 
 </ion-content>
 <ion-footer>
