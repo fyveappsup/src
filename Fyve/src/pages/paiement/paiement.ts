@@ -14,13 +14,13 @@ import { NativeAudio } from '@ionic-native/native-audio';
 export class PaiementPage {
 
   idDonneur = null;
-  idServeur = null;
+  Serveur = null;
   montant : number  = 2;
   
   paiementEffectue = null;
   constructor(public nav: NavController, public navParams: NavParams, public firebaseProvider : FirebaseProvider, public storage: Storage, public alertCtrl: AlertController, public toastCtrl: ToastController, public nativeAudio: NativeAudio) {
     this.storage.get("id").then((val) => {this.idDonneur=val;});
-    this.idServeur = this.navParams.get('idServeur');
+    this.Serveur = this.navParams.get('Serveur');
   }
 
   ionViewWillEnter(){
@@ -32,7 +32,7 @@ export class PaiementPage {
   }
 
   public payer(){
-    this.paiementEffectue = this.firebaseProvider.addPaiementItem(this.idDonneur, this.idServeur, this.montant/10);
+    this.paiementEffectue = this.firebaseProvider.addPaiementItem(this.idDonneur, this.Serveur.id, this.montant/10);
     if(this.paiementEffectue!=null){
       this.creerToast("Le serveur vous remercie !");
       this.nativeAudio.play('son', () => console.log('son joué'));

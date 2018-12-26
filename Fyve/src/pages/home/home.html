@@ -3,19 +3,19 @@
 </ion-header>
 
 <ion-content padding>
-    
+
 
   <ion-slides pager>
-      
+
     <ion-slide>
-        <img class="img-logo" src="../../assets/imgs/logoblanc.png" alt=""/>
-        <p class="subtitle">
-          Laisser un pourboir n'a jamais été aussi simple !
-        </p>
-        <div text-left>
-          <img id="arrow-left" src="../../assets/imgs/arrow-right.png" alt="" />
-        </div>
-        
+      <img class="img-logo" src="../../assets/imgs/logoblanc.png" alt="" />
+      <p class="subtitle">
+        Laisser un pourboire n'a jamais été aussi simple !
+      </p>
+      <div text-left>
+        <img id="arrow-left" src="../../assets/imgs/arrow-right.png" alt="" />
+      </div>
+
     </ion-slide>
 
 
@@ -37,13 +37,61 @@
       </ion-card>
     </ion-slide>
 
+    <ion-slide>
+      <ion-card>
+
+        <ion-card-title>
+          Je scan une carte serveur
+        </ion-card-title>
+
+        <ion-card-content>
+          <div class="espace-img"></div>
+          <img id="img-compte1" src="../../assets/imgs/id-card-2.png" alt='' />
+          <img id="img-compte2" src="../../assets/imgs/checked.png" alt="" />
+          <p>Scanner le QrCode d'un serveur et accèder à son profil.<br>
+            Vous pouvez alors donner votre avis et lui donner un Fyve !</p>
+        </ion-card-content>
+
+      </ion-card>
+    </ion-slide>
+
+
+    <ion-slide>
+      <ion-card>
+
+        <ion-card-title>
+          Je donne un Fyve !
+        </ion-card-title>
+
+        <ion-card-content>
+          <div class="espace-img"></div>
+          <img id="img-compte1" src="../../assets/imgs/id-card-2.png" alt='' />
+          <img id="img-compte2" src="../../assets/imgs/checked.png" alt="" />
+          <p>Sélectionnez un prix et validez votre Fyve !</p>
+        </ion-card-content>
+
+      </ion-card>
+    </ion-slide>
+
 
     <ion-slide>
 
-      <img src="../../assets/imgs/logovert.png" alt="Logo Fyve">
+      <img class="img-logo" src="../../assets/imgs/logoblanc.png" alt="" />
+      <p class="subtitle">
+        Laisser un pourboir n'a jamais été aussi simple !
+      </p>
 
-      <button ion-button block tappable color="primary" round (click)="viewLoginPage()">Connexion</button>
-      <button ion-button block tappable color="primary" round (click)="viewRegisterPage()">S'inscrire</button>
+      <div class="block-commencer">
+        <div padding>
+          <button ion-button tappable block (click)="viewLoginPage()">Connexion</button>
+        </div>
+        <div padding>
+          <button ion-button tappable block (click)="viewRegisterPage()">S'inscrire</button>
+        </div>
+        
+        
+      </div>
+
 
     </ion-slide>
 

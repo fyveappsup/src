@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      My Profil Page
+      Mon compte
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,7 +9,7 @@
 <ion-content>
   <ion-list>
 
-    <ion-list-header class="item item-ios list-header list-header-ios" color="light">
+    <ion-list-header color="light">
       Vos Informations
       <button *ngIf="!isModifiable" (click)="modifier()" clear icon-only ion-button item-end class="disable-hover item-button button button-ios button-clear button-clear-ios">
         <ion-icon name="construct" role="img" class="icon icon-ios ion-ios-cog" aria-label="cog"></ion-icon>
@@ -57,37 +57,40 @@
 
   <ion-list>
 
-      <ion-list-header class="item item-ios list-header list-header-ios" color="light">
-        Autres Opérations
-      </ion-list-header>
+    <ion-list-header color="light">
+      Autres Opérations
+    </ion-list-header>
 
-      <ion-item-divider color="primary">
-        <ion-label color="light">
-          Se deconnectez 
-        </ion-label>
-      
-      <button (click)="deconnection()" color="light" ion-button item-end outline>
-        <ion-icon name="ios-exit-outline"></ion-icon>
+    <ion-item-divider color="primary">
+      <ion-label>
+        Se deconnectez
+      </ion-label>
+
+      <button (click)="deconnection()" ion-button item-end outline>
+        Au revoir
       </button>
-  </ion-item-divider>
+    </ion-item-divider>
 
-      <ion-item-divider color="danger">
-            <ion-label>
-              Supprimer mon compte*
-            </ion-label>
-          
-          <button (click)="deleteItem()" color="light" ion-button item-end outline class="disable-hover item-button button button-ios button-outline button-outline-ios button-outline-ios-light">
-            Supprimer
-          </button>
-      </ion-item-divider>
-      <ion-card class="background-light">
-          <ion-card-content>
-            * Attention : Cet opération supprimera votre compte de façon définitive !
-          </ion-card-content>
-        </ion-card>
+    <ion-item-divider color="danger">
+      <ion-label>
+        Supprimer mon compte*
+      </ion-label>
+
+      <button (click)="deleteItem()" ion-button item-end outline>
+        Supprimer
+      </button>
+    </ion-item-divider>
+
+
+
+    <ion-card class="background-light">
+      <ion-card-content>
+        * Attention : Cet opération supprimera votre compte de façon définitive !
+      </ion-card-content>
+    </ion-card>
   </ion-list>
-  
-  
-  
+
+
+
 
 </ion-content>

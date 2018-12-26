@@ -1,5 +1,10 @@
 <ion-header>
   <ion-navbar>
+      <ion-buttons start>
+          <button color="primary" ion-button icon-only clear (click)="viewMyProfilPage()">
+            <ion-icon name="ios-contact-outline"></ion-icon>
+          </button>
+        </ion-buttons>
     <ion-title>
       <img src="../../assets/imgs/logovert.png" alt="FYVE">
     </ion-title>
@@ -8,7 +13,6 @@
         <ion-icon name="ios-exit-outline"></ion-icon>
       </button>
     </ion-buttons>
-
   </ion-navbar>
 </ion-header>
 
@@ -65,14 +69,14 @@
 
 
 
-  <ion-row align-items-center (click)="viewMyProfilPage()">
+  <ion-row align-items-center (click)="viewBadgePage()">
     <ion-col col-3 class="col-img">
       <img src="../../assets/imgs/user-2.png" />
     </ion-col>
 
     <ion-col col-7 padding class="col-menu-content">
-      <h3>Mon compte</h3>
-      <p>Toutes les informations de votre profil</p>
+      <h3>Mes badges</h3>
+      <p>Mes récompenses acquises en donnant des Fyves</p>
     </ion-col>
 
     <ion-col col-2 class="col-ico" text-center>

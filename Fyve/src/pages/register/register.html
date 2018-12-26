@@ -1,46 +1,51 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Register
+      <img src="../../assets/imgs/logoblanc.png" alt="">
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  
-  <ion-list>
 
-    <ion-item>
-      <ion-label stacked color="primary">Prenom</ion-label>
-      <ion-input type="text" [(ngModel)]="prenom"></ion-input>
-    </ion-item>
+  <div class="en-tete" margin padding>
+    <h1>Je m'inscris</h1>
+    <span class="subtitle">Cette étape est un plaisir !</span>
+  </div>
 
-    <ion-item>
-      <ion-label stacked color="primary">Nom</ion-label>
-      <ion-input type="text" [(ngModel)]="nom"></ion-input>
-    </ion-item>
+  <div class="formulaire" padding>
+    <ion-list no-lines inset>
 
-    <ion-item>
-      <ion-label stacked color="primary" >Mail</ion-label>
-      <ion-input type="email" [(ngModel)]="mail" placeholder="user@mail.com"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="prenom" placeholder="Prénom"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked color="primary">Mot de passe</ion-label>
-      <ion-input type="password" [(ngModel)]="mdp"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="nom" placeholder="Nom"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked color="primary">Description</ion-label>
-      <ion-textarea [(ngModel)]="description" placeholder="Etudiant..."></ion-textarea>
-    </ion-item>
+      <ion-item>
+        <ion-input type="email" [(ngModel)]="mail" placeholder="Mail"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label stacked color="primary">Êtes-vous serveur ?</ion-label>
-      <ion-toggle [(ngModel)]="serveur"></ion-toggle>
-    </ion-item>
+      <ion-item>
+        <ion-input type="password" [(ngModel)]="mdp" placeholder="Mot de passe"></ion-input>
+      </ion-item>
 
-  </ion-list>
+      <ion-item>
+        <ion-label stacked color="primary">Description</ion-label>
+        <ion-textarea [(ngModel)]="description" placeholder="Etudiant..."></ion-textarea>
+      </ion-item>
 
-  <button ion-button round color="primary" (click)="addItem()">S'inscrire</button>
+      <ion-item>
+        <ion-label color="primary">Êtes-vous serveur ?</ion-label>
+        <ion-toggle [(ngModel)]="serveur"></ion-toggle>
+      </ion-item>
+
+    </ion-list>
+
+    <button ion-button block (click)="addItem()">Aller Hop !</button>
+  </div>
+
+
 </ion-content>

@@ -51,6 +51,10 @@ page-home {
         border-radius: 10px!important;
       }
 
+      ion-card-title{
+          color : color($colors, secondary)!important;
+      }
+
       ion-card-content{
           position: relative;
 
@@ -65,7 +69,7 @@ page-home {
 
 
     #img-compte1{
-        width : 30%;
+        width : 40%;
         height: auto;
         position : absolute;
         top:0;
@@ -76,10 +80,10 @@ page-home {
         animation-iteration-count: infinite;
     }
     #img-compte2{
-        width : 30%;
+        width : 40%;
         height: auto;
         position : absolute;
-        top:40%;
+        top:30%;
         right:5%;
         animation-name: mouvement-img-compte2;
         animation-duration: 10s;
@@ -89,13 +93,32 @@ page-home {
 
     @keyframes mouvement-img-compte1 {
         0%   {top:0; left:5%}
-        80% {top:15%; left:30%}
+        80% {top:10%; left:25%}
         100%   {top:0; left:5%}
       }
       @keyframes mouvement-img-compte2 {
-        0%   {top:40%; right:5%}
-        80% {top:20%; right:30%}
-        100%   {top:40%; right:5%}
+        0%   {top:30%; right:5%}
+        80% {top:20%; right:25%}
+        100%   {top:30%; right:5%}
+      }
+
+      .block-commencer{
+          margin-top:70px;
+          color : white;
+
+          button{
+              background-color: white;
+              color : color($colors, primary-vive);
+              font-weight: 500;
+              -webkit-box-shadow: 0px 0px 62px -20px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 62px -20px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 62px -20px rgba(0,0,0,0.75);
+          }
+
+          div{
+              width: 50%;
+              float : left;
+          }
       }
 }
 

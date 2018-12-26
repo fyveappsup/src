@@ -9,6 +9,11 @@ page-menu {
         }
     }
 
+    ion-buttons{
+        padding-left : 10px;
+        padding-right : 10px;
+    }
+
     ion-content, .toolbar-background{
         background-color: color($colors, light)!important;
         border: 0px!important;

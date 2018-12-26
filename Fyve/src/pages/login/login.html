@@ -1,27 +1,36 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Login
+      <img src="../../assets/imgs/logoblanc.png" alt="">
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding text-center>
 
- <ion-list>
+  <div class="en-tete" margin padding>
+    <h1>Je me connecte</h1>
+    <span class="subtitle">A un click du bonheur !</span>
+  </div>
 
-  <ion-item>
-    <ion-label stacked>Mail</ion-label>
-    <ion-input type="email" [(ngModel)]="mail"></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-label stacked>Mot de Passe</ion-label>
-    <ion-input type="password" [(ngModel)]="mdp"></ion-input>
-  </ion-item>
+  <div class="formulaire" padding>
+    <ion-list no-lines>
 
- </ion-list>
+      <ion-item>
+        <ion-input type="email" [(ngModel)]="mail" placeholder="Mail"></ion-input>
+      </ion-item>
 
- <button ion-button round (click)="login()">Je me connecte</button>
+      <ion-item>
+        <ion-input type="password" [(ngModel)]="mdp" placeholder="Mot de Passe"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <button ion-button block (click)="login()">C'est parti !</button>
+  </div>
+
+
+
 
 </ion-content>

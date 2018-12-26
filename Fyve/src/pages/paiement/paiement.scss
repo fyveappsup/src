@@ -1,3 +1,100 @@
 page-paiement {
 
+  .toolbar-title,
+  .toolbar>.back-button {
+    color: white !important;
+    text-align: center;
+    font-family: 'Righteous';
+
+    img {
+      width: 49px;
+      height: 27px;
+    }
+  }
+
+  .back-button-md {
+    position: absolute;
+    z-index: 99;
+  }
+
+  .toolbar-background {
+    background: transparent;
+    border: 0px !important;
+  }
+
+  ion-content {
+    background: rgba(157, 228, 209, 1);
+    background: -moz-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(157, 228, 209, 1)), color-stop(69%, rgba(10, 226, 168, 1)), color-stop(100%, rgba(10, 226, 168, 1)));
+    background: -webkit-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9de4d1', endColorstr='#0ae2a8', GradientType=1);
+  }
+
+  ion-header::after {
+    display: none;
+  }
+
+  ion-card {
+    border-radius: 5px !important;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 62px -20px rgba(0, 0, 0, 0.75) !important;
+    -moz-box-shadow: 0px 0px 62px -20px rgba(0, 0, 0, 0.75) !important;
+    box-shadow: 0px 0px 62px -20px rgba(0, 0, 0, 0.75) !important;
+
+    margin-top: 50px !important;
+
+    button {
+        margin-top: 20px !important;
+        color: white !important;
+        font-weight: 500;
+        -webkit-box-shadow: 0px 0px 62px -20px rgba(0, 0, 0, 0.75) !important;
+        -moz-box-shadow: 0px 0px 62px -20px rgba(0, 0, 0, 0.75) !important;
+        box-shadow: 0px 0px 62px -20px rgba(0, 0, 0, 0.75) !important;
+      }
+  }
+
+  ion-card-title {
+    background-color: color($colors, light) !important;
+    color: color($colors, primary-vive) !important;
+    margin: 0 !important;
+    padding: 20px 0px !important;
+  }
+
+  .qrcode {
+    width: 85%;
+    height: auto;
+    margin: auto;
+  }
+
+  .logo-fyve {
+    img {
+      width: 50%;
+      height: auto;
+      margin: auto;
+    }
+  }
+
+  ion-badge {
+    margin-top: 20px !important;
+    color: white !important;
+    font-size: 25px;
+  }
+
+  ion-item {
+    margin-top: 20px !important;
+  }
+
+  .item-md{
+    .range-knob {
+        width: 35px !important;
+        height: 35px !important;
+        top: 5px !important;
+        background-color: white !important;
+        border: 3px solid color($colors, primary) !important;
+      }
+  }
+
 }

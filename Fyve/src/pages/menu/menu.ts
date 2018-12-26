@@ -7,6 +7,7 @@ import { MyProfilPage} from '../myprofil/myprofil';
 import { ScanPage } from '../scan/scan';
 import { HistoriquePage} from '../historique/historique';
 import { HomePage } from './../home/home';
+import { BadgePage } from './../badge/badge';
 
 @Component({
   selector: 'page-menu',
@@ -37,6 +38,10 @@ export class MenuPage {
 
   public viewHistoriquePage(){
     this.nav.push(HistoriquePage);
+  }
+
+  public viewBadgePage(){
+    this.nav.push(BadgePage);
   }
 
   public deconnection(){

@@ -18,7 +18,7 @@ export class ServeurProfilPage {
   public paiement() {
   
       this.nav.push(PaiementPage, {
-      "idServeur": this.profil.id 
+      "Serveur": this.profil
     }); 
 }
 }
