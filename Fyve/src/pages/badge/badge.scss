@@ -1,3 +1,115 @@
 page-badge {
 
+  .toolbar-title,
+  .toolbar>.back-button {
+    color: white !important;
+    text-align: center;
+    font-family: 'Righteous';
+
+    img {
+      width: 49px;
+      height: 27px;
+    }
+  }
+
+  .back-button-md {
+    position: absolute;
+    z-index: 99;
+  }
+
+  ion-navbar .toolbar-background {
+    background: transparent;
+    border: 0px !important;
+  }
+
+  ion-content {
+    background: rgba(157, 228, 209, 1);
+    background: -moz-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(157, 228, 209, 1)), color-stop(69%, rgba(10, 226, 168, 1)), color-stop(100%, rgba(10, 226, 168, 1)));
+    background: -webkit-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    background: linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9de4d1', endColorstr='#0ae2a8', GradientType=1);
+  }
+
+  ion-header::after {
+    display: none;
+  }
+
+  ion-card {
+    -webkit-box-shadow: 0px 0px 60px -20px rgba(0, 0, 0, 0.75) !important;
+    -moz-box-shadow: 0px 0px 60px -20px rgba(0, 0, 0, 0.75) !important;
+    box-shadow: 0px 0px 60px -20px rgba(0, 0, 0, 0.75) !important;
+  }
+
+  ion-card-content {
+    position: relative;
+    text-align: center;
+
+    img {
+      position: absolute;
+      width: 40% !important;
+      height: auto;
+      top: -50px;
+      right: 10px;
+    }
+
+    .titre-badge {
+      position: absolute;
+      width: 45% !important;
+      background-color: color($colors, primary);
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      font-family: 'Righteous';
+      border-radius: 5px;
+      -webkit-box-shadow: 0px 0px 60px -20px rgba(0, 0, 0, 0.75) !important;
+      -moz-box-shadow: 0px 0px 60px -20px rgba(0, 0, 0, 0.75) !important;
+      box-shadow: 0px 0px 60px -20px rgba(0, 0, 0, 0.75) !important;
+      top: -25px;
+      left: 10px;
+    }
+
+    .complete {
+      margin-top: 100px;
+
+      h5 {
+        font-size: 20px;
+        font-weight: 500;
+        color : color($colors, secondary);
+      }
+
+      .range-bar{
+          height: 5px!important;
+          border-radius: 20px!important;
+      }
+      .range-bar-active{
+        background-color: color($colors, primary-vive)!important;
+      }
+        .range-knob {
+            width: 35px !important;
+            height: 35px !important;
+            top: 5px !important;
+            background-color: white !important;
+            border: 3px solid color($colors, primary) !important;
+          }
+
+      ion-badge{
+          color : white;
+          background-color: color($colors, primary-vive);
+      }
+
+    }
+  }
+  .swiper-wrapper{
+      padding-bottom : 10px;
+  }
+
+  .swiper-pagination{
+      bottom : 0px!important;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: white;
+}
 }

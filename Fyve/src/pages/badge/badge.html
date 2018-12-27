@@ -1,11 +1,175 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-     Badges
+      Mes Badges
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
- 
+  <div [ngSwitch]="section">
+
+    <ion-slides *ngSwitchCase="'sommes'" pager spaceBetween=20>
+      <ion-slide>
+        <ion-card>
+          <img src="../../assets/imgs/bar-resto.jpg" alt="" />
+          <ion-card-content>
+            <img *ngIf="totalDonnes<10" src="../../assets/imgs/badgeLocked/locked10euros.png" alt="" />
+            <img *ngIf="totalDonnes>=10" src="../../assets/imgs/badgeOuverts/badgeseuros10.png" alt="" />
+            <div class="titre-badge">
+              10€ <br>donnés
+            </div>
+            <div class="complete">
+              <h5>Progression</h5>
+                <ion-range min="0" max="10" [(ngModel)]="totalDonnes" disabled color="primary-vive"></ion-range>
+                <ion-badge>{{totalDonnes.toFixed(2)}}€ / 10€</ion-badge>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img src="../../assets/imgs/resto-soir.jpg" alt="" />
+          <ion-card-content>
+            <img *ngIf="totalDonnes<20" src="../../assets/imgs/badgeLocked/locked20euros.png" alt="" />
+            <img *ngIf="totalDonnes>=20" src="../../assets/imgs/badgeOuverts/badgeseuros20.png" alt="" />
+            <div class="titre-badge">
+                20€ <br>donnés
+              </div>
+              <div class="complete">
+                <h5>Progression</h5>
+                  <ion-range min="0" max="20" [(ngModel)]="totalDonnes" disabled color="primary-vive"></ion-range>
+                  <ion-badge>{{totalDonnes.toFixed(2)}}€ / 20€</ion-badge>
+              </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img src="../../assets/imgs/serveur-biere.jpg" alt="" />
+          <ion-card-content>
+            <img *ngIf="totalDonnes<50" src="../../assets/imgs/badgeLocked/locked50euros.png" alt="" />
+            <img *ngIf="totalDonnes>=50" src="../../assets/imgs/badgeOuverts/badgeseuros50.png" alt="" />
+            <div class="titre-badge">
+                50€ <br>donnés
+              </div>
+              <div class="complete">
+                <h5>Progression</h5>
+                  <ion-range min="0" max="50" [(ngModel)]="totalDonnes" disabled color="primary-vive"></ion-range>
+                  <ion-badge>{{totalDonnes.toFixed(2)}}€ / 50€</ion-badge>
+              </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img src="../../assets/imgs/serveur-jouet.jpg" alt="" />
+          <ion-card-content>
+            <img *ngIf="totalDonnes<100" src="../../assets/imgs/badgeLocked/locked100euros.png" alt="" />
+            <img *ngIf="totalDonnes>=100" src="../../assets/imgs/badgeOuverts/badgeseuros100.png" alt="" />
+            <div class="titre-badge">
+                100€ <br>donnés
+              </div>
+              <div class="complete">
+                <h5>Progression</h5>
+                  <ion-range min="0" max="100" [(ngModel)]="totalDonnes" disabled color="primary-vive"></ion-range>
+                  <ion-badge>{{totalDonnes.toFixed(2)}}€ / 100€</ion-badge>
+              </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-slides *ngSwitchCase="'fyve'" pager>
+      <ion-slide>
+        <ion-card>
+          <img src="../../assets/imgs/serveur-pain.jpg" alt="" />
+          <ion-card-content>
+            <img *ngIf="lesPaiementsDonnes.length<5" src="../../assets/imgs/badgeLocked/locked5.png" alt="" />
+            <img *ngIf="lesPaiementsDonnes.length>=5" src="../../assets/imgs/badgeOuverts/ouvert5.png" alt="" />
+            <div class="titre-badge">
+                5 fyves <br>donnés
+              </div>
+              <div class="complete">
+                <h5>Progression</h5>
+                  <ion-range min="0" max="5" [(ngModel)]="lesPaiementsDonnes.length" disabled color="primary-vive"></ion-range>
+                  <ion-badge>{{lesPaiementsDonnes.length}} / 5</ion-badge>
+              </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img src="../../assets/imgs/resto-soir.jpg" alt="" />
+          <ion-card-content>
+            <img *ngIf="lesPaiementsDonnes.length<10" src="../../assets/imgs/badgeLocked/locked10.png" alt="" />
+            <img *ngIf="lesPaiementsDonnes.length>=10" src="../../assets/imgs/badgeOuverts/ouvert10.png" alt="" />
+            <div class="titre-badge">
+                10 fyves <br>donnés
+              </div>
+              <div class="complete">
+                <h5>Progression</h5>
+                  <ion-range min="0" max="10" [(ngModel)]="lesPaiementsDonnes.length" disabled color="primary-vive"></ion-range>
+                  <ion-badge>{{lesPaiementsDonnes.length}} / 10</ion-badge>
+              </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img src="../../assets/imgs/serveur-vin.jpg" alt="" />
+          <ion-card-content>
+            <img *ngIf="lesPaiementsDonnes.length<20" src="../../assets/imgs/badgeLocked/locked20.png" alt="" />
+            <img *ngIf="lesPaiementsDonnes.length>=20" src="../../assets/imgs/badgeOuverts/ouvert20.png" alt="" />
+            <div class="titre-badge">
+                20 fyves <br>donnés
+              </div>
+              <div class="complete">
+                <h5>Progression</h5>
+                  <ion-range min="0" max="20" [(ngModel)]="lesPaiementsDonnes.length" disabled color="primary-vive"></ion-range>
+                  <ion-badge>{{lesPaiementsDonnes.length}} / 20</ion-badge>
+              </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card>
+          <img src="../../assets/imgs/bar-resto.jpg" alt="" />
+          <ion-card-content>
+            <img *ngIf="lesPaiementsDonnes.length<50" src="../../assets/imgs/badgeLocked/locked50.png" alt="" />
+            <img *ngIf="lesPaiementsDonnes.length>=50" src="../../assets/imgs/badgeOuverts/ouvert50.png" alt="" />
+            <div class="titre-badge">
+                50 fyves <br>donnés
+              </div>
+              <div class="complete">
+                <h5>Progression</h5>
+                  <ion-range min="0" max="50" [(ngModel)]="lesPaiementsDonnes.length" disabled color="primary-vive"></ion-range>
+                  <ion-badge>{{lesPaiementsDonnes.length}} / 50</ion-badge>
+              </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+  </div>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="section">
+      <ion-segment-button value="sommes">
+        Sommes (€)
+      </ion-segment-button>
+      <ion-segment-button value="fyve">
+        Fyves (nb)
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>
