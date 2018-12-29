@@ -29,6 +29,7 @@
     "@ionic/storage": "^2.2.0",
     "angular-md5": "^0.1.10",
     "angularfire2": "^4.0.0-rc.1",
+    "chart.js": "^2.7.3",
     "cordova-plugin-nativeaudio": "3.0.9",
     "cordova-sqlite-storage": "^2.5.2",
     "firebase": "^4.1.3",

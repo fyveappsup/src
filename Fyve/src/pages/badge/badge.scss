@@ -87,12 +87,17 @@ page-badge {
       .range-bar-active{
         background-color: color($colors, primary-vive)!important;
       }
-        .range-knob {
-            width: 35px !important;
-            height: 35px !important;
-            top: 5px !important;
+       .range-knob {
             background-color: white !important;
             border: 3px solid color($colors, primary) !important;
+          }
+
+          .range-md .range-knob{
+            width: 30px !important;
+            height: 30px !important;
+            top: 8px !important;
+            outline : none!important;
+            transform: scale(1)!important;
           }
 
       ion-badge{

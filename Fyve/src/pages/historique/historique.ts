@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { Storage } from '@ionic/storage';
+import { GraphePage } from '../graphe/graphe';
 
 @Component({
   selector: 'page-historique',
@@ -36,7 +37,6 @@ export class HistoriquePage {
         this.lesPaiementsRecus=element;
         this.getTotalRecus();
       });
-      console.log("paiement recus",this.lesPaiementsRecus);
 
       // paiemments données
       this.listPaiementDonnes = this.firebaseProvider.getPaiementDonnesById(this.idUser);
@@ -45,8 +45,6 @@ export class HistoriquePage {
         this.lesPaiementsDonnes=element;
         this.getTotalDonnes();
       });
-      console.log("paiement donnes",this.lesPaiementsDonnes);
-
       
     });
   }
@@ -73,6 +71,10 @@ export class HistoriquePage {
       console.log("item", item);
       this.totalDonnes+=item.montant;
     });
+  }
+
+  public viewGraphePage(){
+    this.navCtrl.push(GraphePage, {PaiementRecus : this.lesPaiementsRecus, PaiementDonnes : this.lesPaiementsDonnes});
   }
 
 }

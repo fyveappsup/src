@@ -1,4 +1,4 @@
-page-historique {
+page-graphe {
 
   .toolbar-title,
   .toolbar>.back-button {
@@ -32,14 +32,7 @@ page-historique {
     border: 0px !important;
   }
 
-  .vert {
-    z-index: -99;
-    position: absolute;
-    height: 300px;
-    width: 100%;
-    top: 0;
-    left: 0;
-
+  ion-content{
     background: rgba(157, 228, 209, 1);
     background: -moz-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
     background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(157, 228, 209, 1)), color-stop(69%, rgba(10, 226, 168, 1)), color-stop(100%, rgba(10, 226, 168, 1)));
@@ -48,55 +41,6 @@ page-historique {
     background: -ms-linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
     background: linear-gradient(45deg, rgba(157, 228, 209, 1) 0%, rgba(10, 226, 168, 1) 69%, rgba(10, 226, 168, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9de4d1', endColorstr='#0ae2a8', GradientType=1);
-  }
-
-  .scroll-content {
-    margin-top: 0 !important;
-  }
-
-  .container {
-    margin-top: 80px;
-    text-align: center;
-
-    h1,
-    h3 {
-      color: white;
-    }
-
-    ion-list {
-        -webkit-box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.75);
-        box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.75);
-
-      margin-top: 90px;
-      margin-bottom: 50px;
-      border-bottom: 0.55px solid #c8c7cc;
-
-      ion-item {
-        font-size: 12px;
-        text-align: center;
-        border-bottom: 0.55px solid #c8c7cc;
-        background-color: white;
-
-        .item-inner{
-            border : none!important;
-        }
-      }
-
-      ion-list-header {
-        background-color: color($colors, light);
-        text-transform: capitalize;
-        margin-bottom: 0;
-      }
-
-      .date {
-        color: color($colors, primary-vive);
-      }
-    }
-  }
-
-  ion-segment-button{
-      font-family: "Righteous";
   }
 
 }

@@ -38,6 +38,7 @@ import { HistoriquePage } from '../pages/historique/historique';
 import { PaiementPage } from '../pages/paiement/paiement';
 import { BadgePage } from '../pages/badge/badge';
 import { MenuPage } from '../pages/menu/menu';
+import { GraphePage } from '../pages/graphe/graphe';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MenuPage } from '../pages/menu/menu';
     ServeurProfilPage,
     HistoriquePage, 
     PaiementPage, 
-    BadgePage
+    BadgePage,
+    GraphePage
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,8 @@ import { MenuPage } from '../pages/menu/menu';
     ServeurProfilPage,
     HistoriquePage, 
     PaiementPage, 
-    BadgePage
+    BadgePage,
+    GraphePage
   ],
   providers: [
     StatusBar,
