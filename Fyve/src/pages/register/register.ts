@@ -58,7 +58,7 @@ export class RegisterPage {
     }
     // Quand tous les champs ne sont pas remplie
     else {
-      this.creerAlert('Un oubli est vite arrivé !','Veuillez remplir tous les champs !', 'Je réessaye')
+      this.creerAlert('Un oubli est vite arrivé !','Veuillez remplir tous les champs !', 'Je réessaye');
    }
 }
 
