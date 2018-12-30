@@ -49,9 +49,9 @@ export class LoginPage {
               this.storage.set("serveur", this.user.serveur);
               this.nav.setRoot(MenuPage);
             }
-            else{
-              this.creerToast("Login incorrect !")
-            }
+          }
+          else{
+            this.creerToast("Mot de passe incorrect !");
           }
         });
       });
