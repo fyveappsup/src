@@ -52,7 +52,7 @@ page-home {
       }
 
       ion-card-title{
-          color : color($colors, secondary)!important;
+          color : black!important;
       }
 
       ion-card-content{
@@ -72,34 +72,96 @@ page-home {
         width : 40%;
         height: auto;
         position : absolute;
-        top:0;
-        left:5%;
+        top:15%;
+        left:10%;
         animation-name: mouvement-img-compte1;
-        animation-duration: 10s;
-        animation-delay: 5s;
+        animation-duration: 5s;
+        animation-delay: 2s;
         animation-iteration-count: infinite;
     }
     #img-compte2{
         width : 40%;
         height: auto;
         position : absolute;
-        top:30%;
-        right:5%;
+        top:15%;
+        right:10%;
         animation-name: mouvement-img-compte2;
-        animation-duration: 10s;
-        animation-delay: 5s;
+        animation-duration: 5s;
+        animation-delay: 2s;
         animation-iteration-count: infinite;
     }
 
     @keyframes mouvement-img-compte1 {
-        0%   {top:0; left:5%}
-        80% {top:10%; left:25%}
-        100%   {top:0; left:5%}
+        0%   {top:15%; left:10%}
+        80% {top:15%; left:35%}
+        100%   {top:15%; left:10%}
       }
       @keyframes mouvement-img-compte2 {
-        0%   {top:30%; right:5%}
-        80% {top:20%; right:25%}
-        100%   {top:30%; right:5%}
+        0%   {top:15%; right:10%}
+        80% {top:15%; right:25%}
+        100%   {top:15%; right:10%}
+      }
+
+      #img-scan1{
+        width : 40%;
+        height: auto;
+        position : absolute;
+        top:0%;
+        left:5%;
+        animation-name: mouvement-img-scan1;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+    }
+    #img-scan2{
+        width : 40%;
+        height: auto;
+        position : absolute;
+        top:25%;
+        right:5%;
+        animation-name: mouvement-img-scan2;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes mouvement-img-scan1 {
+        0%   {top:0; left:5%}
+        80% {top:15%; left:30%}
+        100%   {top:0; left:5%}
+      }
+      @keyframes mouvement-img-scan2 {
+        0%   {top:25%; right:5%}
+        80% {top:15%; right:30%}
+        100%   {top:25%; right:5%}
+      }
+
+      #img-piece1{
+        width : 40%;
+        height: auto;
+        position : absolute;
+        top:0%;
+        right:30%;
+        animation-name: mouvement-img-piece1;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+    }
+    #img-piece2{
+        width : 40%;
+        height: auto;
+        position : absolute;
+        top:25%;
+        right:30%;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes mouvement-img-piece1 {
+        0%   {top:0; right:30%;}
+        100% {top:30%; right:30%;}
+
       }
 
       .block-commencer{
