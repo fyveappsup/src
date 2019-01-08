@@ -40,18 +40,17 @@
     </ion-list>
 
     <div class="list-comment">
-      <ion-card>
+      <ion-card *ngFor="let item of lesAvisRecus">
         <ion-card-title padding>
-          Albert Dupont
-          <ion-badge>4★</ion-badge>
+          {{ getNomUser(item.idClient)}}
+          <ion-badge>{{item.note}}★</ion-badge>
         </ion-card-title>
 
         <ion-card-content>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus magna ac magna interdum accumsan.
-          Suspendisse volutpat bibendum vehicula. Etiam consectetur non velit sed gravida. Phasellus dolor erat,
-          tincidunt at viverra non, tincidunt in sapien. Nam eu sapien sed risus euismod dapibus non quis ante.
-          Nulla in velit vitae justo elementum lacinia et sed mi. Phasellus elementum imperdiet mauris,
-          et pellentesque tellus scelerisque nec.
+          <p>{{item.commentaire}}</p>
+          <ion-note style="float: right;">
+            {{item.date | date:'d MMMM y'}}
+          </ion-note>
         </ion-card-content>
       </ion-card>
     </div>

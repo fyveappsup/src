@@ -103,6 +103,15 @@ export class FirebaseProvider {
     return this.afd.list('/AvisItems/').push(data).key;
   }
 
+  getAvisRecusById(value:string){
+    return this.afd.list('/AvisItems', {
+      query: {
+        orderByChild: "idServeur",
+        equalTo : value
+      }
+    });
+  }
+
 
   // **********************************************************************************
   // Création d'un toast

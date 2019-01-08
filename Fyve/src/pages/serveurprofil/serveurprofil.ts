@@ -10,6 +10,10 @@ import { PaiementPage } from '../paiement/paiement';
 })
 export class ServeurProfilPage {
 
+  // Avis recu par le serveur
+  listAvisRecus = null;
+  lesAvisRecus = [];
+
   // profil serveur
   profil = null;
   idClient = null;
@@ -18,6 +22,15 @@ export class ServeurProfilPage {
     this.profil = this.navParams.get('profil');
     this.profil = JSON.parse(this.profil);
     this.storage.get("id").then((val) => {this.idClient=val;});
+  }
+
+  ionViewWillEnter(){
+     // Avis recus
+      this.listAvisRecus = this.firebaseProvider.getAvisRecusById(this.profil.id);
+      this.listAvisRecus.forEach(element => {
+        this.lesAvisRecus=[];
+        this.lesAvisRecus=element;
+      });
   }
 
   public paiement() {
@@ -85,6 +98,15 @@ export class ServeurProfilPage {
       return "0";
     }
 
+  }
+
+
+  public getNomUser(id:string) : string{
+    var nom ="";
+    this.firebaseProvider.getUserById(id).forEach(user =>{
+      nom = user.prenom + " "+ user.nom;
+    });
+    return nom;
   }
 
   public creerAlert(title :string, message : string){
