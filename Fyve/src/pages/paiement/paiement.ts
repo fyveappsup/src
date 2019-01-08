@@ -23,19 +23,14 @@ export class PaiementPage {
     this.Serveur = this.navParams.get('Serveur');
   }
 
-  ionViewWillEnter(){
-    this.nativeAudio.preloadComplex('son', '../../assets/audio/sonPaiement.mp3', 1, 1, 0);
-  }
+
   
-  ionViewDidLeave(){
-    this.nativeAudio.unload('son');
-  }
 
   public payer(){
     this.paiementEffectue = this.firebaseProvider.addPaiementItem(this.idDonneur, this.Serveur.id, this.montant/10);
     if(this.paiementEffectue!=null){
       this.creerToast("Le serveur vous remercie !");
-      this.nativeAudio.play('son', () => console.log('son joué'));
+      this.nav.pop();
     }
     else{
       this.creerAlert("Une erreur est survenue !", "Une erreur est survenue avec la base de données", "Ok");
