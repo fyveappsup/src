@@ -1,5 +1,7 @@
+import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, ToastController} from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { PaiementPage } from '../paiement/paiement';
 
 @Component({
@@ -10,9 +12,12 @@ export class ServeurProfilPage {
 
   // profil serveur
   profil = null;
-  constructor(public nav: NavController, public navParams: NavParams, public alertCtrl : AlertController) {
+  idClient = null;
+
+  constructor(public nav: NavController,public firebaseProvider: FirebaseProvider, public navParams: NavParams,public storage : Storage, public alertCtrl : AlertController, public toastCtrl : ToastController) {
     this.profil = this.navParams.get('profil');
     this.profil = JSON.parse(this.profil);
+    this.storage.get("id").then((val) => {this.idClient=val;});
   }
 
   public paiement() {
@@ -51,16 +56,18 @@ export class ServeurProfilPage {
             console.log(note);
             if(note==="0"){
               // Note incorrect
-              let alertNote = this.alertCtrl.create({
-                title: 'Note incorrect',
-                message : 'Veuillez entrer une note entre 1 et 5 compris.',
-                buttons : ['OK']
-              });
-              alertNote.present();
-
+              this.creerAlert('Note incorrect','Veuillez entrer une note entre 1 et 5 compris.')
             }
             else{
               // enregistrer l'avis
+              var effectuer = null;
+              effectuer= this.firebaseProvider.addAvisItem(this.idClient, this.profil.id, data.commentaire, data.note);
+              if(effectuer==null){
+                this.creerAlert("Une erreur est survenue !", "Une erreur est survenue avec la base de données");
+              }
+              else{
+                this.creerToast("Votre a été envoyé avec succès !");
+              }
             }
           }
         }
@@ -78,6 +85,23 @@ export class ServeurProfilPage {
       return "0";
     }
 
+  }
+
+  public creerAlert(title :string, message : string){
+    let alert = this.alertCtrl.create({
+      title: title,
+      message : message,
+      buttons : ['OK']
+    });
+    alert.present();
+  }
+
+  public creerToast(message: string) {
+    var toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000
+    });
+    toast.present();
   }
 
 }

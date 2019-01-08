@@ -90,6 +90,21 @@ export class FirebaseProvider {
 
 
   // **********************************************************************************
+
+  // AvisItem *************************************************************************
+  addAvisItem(idClient : string, idServeur: string, commentaire : string, note : number) {
+    var data= {
+      "idClient" : idClient,
+      "idServeur" : idServeur,
+      "commentaire" : commentaire,
+      "note" : note,
+      "date" : Date.now()
+    };
+    return this.afd.list('/AvisItems/').push(data).key;
+  }
+
+
+  // **********************************************************************************
   // Création d'un toast
   public creerToast(message: string) {
     var toast = this.toastCtrl.create({
