@@ -14,7 +14,7 @@
   </div>
 
   <div class="container">
-    <ion-badge>4★ (7 avis)</ion-badge>
+    <ion-badge><span *ngIf="nbAvis">{{noteMoyenne.toFixed(2)}}★</span> ({{nbAvis}} avis)</ion-badge>
     <h2>
       {{profil.prenom}} {{profil.nom}}
     </h2>

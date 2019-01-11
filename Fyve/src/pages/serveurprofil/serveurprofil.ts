@@ -13,6 +13,8 @@ export class ServeurProfilPage {
   // Avis recu par le serveur
   listAvisRecus = null;
   lesAvisRecus = [];
+  nbAvis = 0;
+  noteMoyenne = null;
 
   // profil serveur
   profil = null;
@@ -30,6 +32,7 @@ export class ServeurProfilPage {
       this.listAvisRecus.forEach(element => {
         this.lesAvisRecus=[];
         this.lesAvisRecus=element;
+        this.getNbAvisRecus();
       });
   }
 
@@ -74,7 +77,7 @@ export class ServeurProfilPage {
             else{
               // enregistrer l'avis
               var effectuer = null;
-              effectuer= this.firebaseProvider.addAvisItem(this.idClient, this.profil.id, data.commentaire, data.note);
+              effectuer= this.firebaseProvider.addAvisItem(this.idClient, this.profil.id, data.commentaire, Number(note));
               if(effectuer==null){
                 this.creerAlert("Une erreur est survenue !", "Une erreur est survenue avec la base de données");
               }
@@ -107,6 +110,17 @@ export class ServeurProfilPage {
       nom = user.prenom + " "+ user.nom;
     });
     return nom;
+  }
+
+  public getNbAvisRecus(){
+    this.noteMoyenne = 0;
+    this.nbAvis = 0;
+    this.lesAvisRecus.forEach(item =>{
+      console.log("item", item);
+      this.nbAvis++;
+      this.noteMoyenne += item.note;
+    });
+    this.noteMoyenne = this.noteMoyenne / this.nbAvis;
   }
 
   public creerAlert(title :string, message : string){
