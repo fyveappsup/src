@@ -15,6 +15,10 @@ export class ScanPage {
     
   }
 
+  ionViewWillEnter(){
+   this.scan();
+  }
+
   public scan() {
     this.scanQr.scan().then(barcodeData => {
       this.serveur=barcodeData.text;
