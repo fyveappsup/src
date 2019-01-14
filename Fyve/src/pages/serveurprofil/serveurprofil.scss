@@ -111,4 +111,14 @@ page-serveurprofil {
 
   }
 
+  #note-bas-page{
+    position: fixed;
+    bottom: 0;
+    background-color: color($colors, primary);
+    color : white;
+    width: 100%;
+    text-align: center;
+    padding : 10px;
+  }
+
 }

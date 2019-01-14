@@ -116,7 +116,6 @@ export class ServeurProfilPage {
     this.noteMoyenne = 0;
     this.nbAvis = 0;
     this.lesAvisRecus.forEach(item =>{
-      console.log("item", item);
       this.nbAvis++;
       this.noteMoyenne += item.note;
     });

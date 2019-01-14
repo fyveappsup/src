@@ -1,3 +1,4 @@
+import { ServeurProfilPage } from './../serveurprofil/serveurprofil';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
@@ -39,6 +40,20 @@ export class QrCodePage {
       };
       this.qrData=JSON.stringify(this.qrData);
     }
+  }
+
+  viewMyServeurProfil(){
+    var qrData={
+      "id" : this.id,
+      "prenom" : this.prenom,
+      "nom" : this.nom,
+      "description" : this.description,
+      "mail" : this.mail
+    };
+    var serv=JSON.stringify(qrData);
+    this.navCtrl.push(ServeurProfilPage, {
+      "profil": serv
+    }); 
   }
 
 }

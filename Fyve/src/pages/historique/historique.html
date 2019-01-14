@@ -28,7 +28,7 @@
             <span style="width:50%;">Le donneur</span>
             <span item-end>Montant</span>
           </ion-list-header>
-          <ion-item *ngIf="lesPaiementsRecus==0">Vous n'avez pas encore reçus de pourboire</ion-item>
+          <ion-item *ngIf="lesPaiementsRecus.length==0">Vous n'avez pas encore reçus de pourboire</ion-item>
           <ion-item *ngFor="let item of lesPaiementsRecus">
             <span item-start class="date">{{item.date | date:'d MMM'}}</span>
             <span style="width:50%;">par <b>{{ getNomUser(item.idDonneur)}}</b></span>
@@ -50,7 +50,7 @@
             <span style="width:50%;">Le donneur</span>
             <span item-end>Montant</span>
           </ion-list-header>
-          <ion-item *ngIf="lesPaiementsDonnes==0">Vous n'avez pas encore donnés de pourboire</ion-item>
+          <ion-item *ngIf="lesPaiementsDonnes.length==0">Vous n'avez pas encore donnés de pourboire</ion-item>
           <ion-item *ngFor="let item of lesPaiementsDonnes">
             <span item-start class="date">{{item.date | date:'d MMM'}}</span>
             <span style="width:50%;">à <b>{{ getNomUser(item.idReceveur)}}</b></span>
