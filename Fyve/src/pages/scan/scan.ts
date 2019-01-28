@@ -22,9 +22,15 @@ export class ScanPage {
   public scan() {
     this.scanQr.scan().then(barcodeData => {
       this.serveur=barcodeData.text;
-      this.nav.push(ServeurProfilPage, {
-      "profil": this.serveur
-    }); 
+      if(this.serveur){
+         this.nav.push(ServeurProfilPage, {
+          "profil": this.serveur
+        }); 
+      }
+      else{
+        this.nav.pop();
+      }
+      
     }, (err) => {
         this.createAlert("Erreur", "Une erreur s'est produite.", err, "OK");
         console.log('Error: ', err);
